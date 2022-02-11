@@ -78,3 +78,93 @@ print(list12)
 list13 = [1, 2, 3, 4, 5]
 list13.extend([6, 7, 8])
 print(list13)
+
+# 不覆蓋原數據,原數據向後順延
+list14 = [1, 2, 3, 4, 5]
+list14.insert(1, 100)
+list14.insert(0, [2, 2, 3])
+print(list14)
+
+
+# pop(x = list(-1))
+# 移除列表中指定下標處的元素(默認移除最後一個)
+list15 = [1, 2, 3, 4, 5]
+print(list15[-1])
+list15.pop()
+list15.pop(2)
+print(list15.pop(1))
+print(list15)
+
+# 移除列表中某個元素(第一個匹配的結果)
+list16 = [1, 2, 3, 4, 5, 6]
+list16.remove(4)
+print(list16)
+
+
+# 清除列表所有元素
+list17 = [1, 2, 3, 45]
+list17.clear()
+print(list17)
+
+
+# 從列表中找出某值的下標
+list18 = [1, 2, 3, 4, 5, 3, 4, 5, 6]
+index18 = list18.index(3)
+# 後面兩個參數表示範圍
+index19 = list18.index(3, 3, 6)
+
+print(index19)
+print(index18)
+
+
+# 裡面有幾個元素
+list20 = [1, 2, 3, 4, 5]
+print(len(list20))
+
+
+# 獲取最大值
+list21 = [1, 2, 3, 4, 5]
+print(max(list21))
+# 獲取最小值
+print(min(list21))
+
+# 查看列表中所出現的次數
+list23 = [2, 2, 2, 4, 4, 4, 5, 5, 5, 5]
+print(list23.count(2))
+
+num24 = 0
+
+while num24 < list23.count(2):
+    list23.remove(2)
+    num24 += 1
+print(list23)
+
+
+# 倒敘陣列內的值
+list25 = [2, 1, 3, 4, 5]
+list25.reverse()
+print(list25)
+
+# 排序
+list26 = [6, 4, 8, 1, 2]
+list26.sort()
+print(list26)
+
+# 淺拷貝(因為底層的變數是存在暫存區>>暫存區內在存記憶體的地址)
+list27 = [1, 2, 3, 4, 5]
+list28 = list27
+
+list28[1] = 200
+
+print(list27, list28)
+
+
+# 深拷貝(暫存區存的地址是不同的記憶體地址)
+list29 = [1, 2, 3, 4, 5]
+list30 = list29.copy()
+
+list30[1] = 200
+# 印出記憶體的地址
+print(id(list30), id(list29))
+
+print(list29, list30)
