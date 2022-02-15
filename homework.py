@@ -1,4 +1,7 @@
 # 第一題
+from re import I
+
+
 num = 100
 while num <= 999:
     a = num % 10
@@ -30,3 +33,15 @@ while c < count:
     listNum.pop()
     c += 1
 print(listNum[len(listNum)-1])
+
+# 質因數分解
+num = int(input())
+
+i = 2
+
+while num != 1:
+    if num % i == 0:
+        print(i)
+        num //= i
+    else:
+        i += 1

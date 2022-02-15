@@ -2,6 +2,7 @@
 #  利用列表:有序的集合
 #  創建list>>格式:格式名 = [列表選項1,列表選項2......,列表選項n]
 
+import random
 list1 = []
 
 print(list1)
@@ -168,3 +169,31 @@ list30[1] = 200
 print(id(list30), id(list29))
 
 print(list29, list30)
+
+list31 = list((1, 2, 3, 4))
+print(list31)
+
+
+# 切片是一個淺拷貝
+
+names1 = ['張三', '李四', '王武', '捷克']
+names2 = names1[::]
+
+names1[0] = 'jeery'
+print(names2)
+
+
+# 列表嵌套
+
+nums = [1, 2, [100, 200, 500], 3, 4, 5]
+'''
+一個學校有10個老師,三個辦公室,等待工作分配
+tips:房間隨機把老師塞進去
+'''
+teachers = ['a', 'b', 'c', 'd', 'e', 'f', 'h', 'i', 'j']
+rooms = [[], [], []]
+
+for teacher in teachers:
+    room = random.choice(rooms)
+    room.append(teacher)
+print(rooms)
