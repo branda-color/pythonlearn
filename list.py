@@ -197,3 +197,13 @@ for teacher in teachers:
     room = random.choice(rooms)
     room.append(teacher)
 print(rooms)
+
+# 列表推導式(使用簡單語法實現創建列表)
+
+list32 = [i for i in range(10)]
+
+print(list32)
+
+list33 = [i for i in range(10) if i % 2 == 0]
+
+print(list33)
