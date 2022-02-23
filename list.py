@@ -2,6 +2,7 @@
 #  利用列表:有序的集合
 #  創建list>>格式:格式名 = [列表選項1,列表選項2......,列表選項n]
 
+import copy
 import random
 list1 = []
 
@@ -207,3 +208,27 @@ print(list32)
 list33 = [i for i in range(10) if i % 2 == 0]
 
 print(list33)
+
+
+# 淺拷貝vs.深拷貝
+
+words = ['hello', 'good', [100, 200, 300], 'yes', 'ho', 'ok']
+
+'''
+淺拷貝不會拷貝內層列表,要完全拷貝不同的要用深拷貝
+'''
+
+
+words1 = words.copy()
+
+words2 = copy.deepcopy(words)
+
+words[0] = '你好'
+
+print(words1)
+
+words[2][0] = 1
+
+print(words1)
+
+print(words2)
